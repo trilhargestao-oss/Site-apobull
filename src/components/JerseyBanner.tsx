@@ -21,29 +21,40 @@ export function JerseyBanner() {
       className="relative w-full bg-ink overflow-hidden"
       aria-label="Camisa oficial 2026"
     >
-      {/* Fundo — foto da camisa cobrindo toda a faixa */}
+      {/* Fundo — foto da camisa com versão dedicada para mobile / desktop.
+          <picture> troca a origem conforme o breakpoint (<768px = mobile). */}
       <div className="absolute inset-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/camisa-2026.jpg"
-          alt=""
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "center 40%" }}
-        />
-        {/* Vinheta escura para legibilidade do texto */}
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcSet="/camisa-2026-mobile.jpg"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/camisa-2026-desktop.jpg"
+            alt=""
+            aria-hidden
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </picture>
+        {/* Vinheta escura para legibilidade do texto.
+            Desktop: gradiente horizontal (texto à esquerda).
+            Mobile: gradiente vertical (texto embaixo). */}
         <div
           aria-hidden
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{
             background:
               "linear-gradient(90deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.62) 45%, rgba(10,10,10,0.15) 70%, rgba(10,10,10,0.55) 100%)",
           }}
         />
-        {/* Gradiente superior/inferior suave */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-b from-ink/60 via-transparent to-ink/80"
+          className="absolute inset-0 md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,0.92) 100%)",
+          }}
         />
         {/* Hairline vermelha no topo, assinatura do clube */}
         <div
@@ -52,7 +63,7 @@ export function JerseyBanner() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-4 md:px-8 min-h-[520px] md:min-h-[560px] flex items-center py-20 md:py-24">
+      <div className="relative mx-auto max-w-[1400px] px-4 md:px-8 min-h-[640px] md:min-h-[560px] flex items-end md:items-center py-10 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

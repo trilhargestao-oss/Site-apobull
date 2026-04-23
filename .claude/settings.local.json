@@ -32,7 +32,11 @@
       "Bash(sips -g pixelWidth -g pixelHeight -g hasAlpha \"/Users/gheno/Downloads/sajifgbwfui.png\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/gheno/Site teste Apobull/src/app/icon.png\")",
       "Bash(sips -Z 1600 \"/Users/gheno/Site teste Apobull/public/camisa-2026.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026.png\")",
-      "Bash(sips -s format jpeg -s formatOptions 82 -Z 1600 \"/Users/gheno/Downloads/eifhiosdcn.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026.jpg\")"
+      "Bash(sips -s format jpeg -s formatOptions 82 -Z 1600 \"/Users/gheno/Downloads/eifhiosdcn.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/gheno/Downloads/dskjghwrvuib.png\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/gheno/Downloads/asjdfgvsudib.png\")",
+      "Bash(sips -s format jpeg -s formatOptions 82 \"/Users/gheno/Downloads/dskjghwrvuib.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026-desktop.jpg\")",
+      "Bash(sips -s format jpeg -s formatOptions 82 \"/Users/gheno/Downloads/asjdfgvsudib.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026-mobile.jpg\")"
     ]
   }
 }
