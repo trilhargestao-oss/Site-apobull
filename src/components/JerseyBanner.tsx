@@ -34,7 +34,7 @@ export function JerseyBanner() {
             src="/camisa-2026-desktop.jpg"
             alt=""
             aria-hidden
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top md:object-[center_top]"
           />
         </picture>
         {/* Vinheta escura para legibilidade do texto.
@@ -63,7 +63,7 @@ export function JerseyBanner() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-4 md:px-8 min-h-[640px] md:min-h-[560px] flex items-end md:items-center py-10 md:py-24">
+      <div className="relative mx-auto max-w-[1400px] px-4 md:px-8 min-h-[640px] md:min-h-[640px] flex items-end md:items-center py-10 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
