@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0a0a0a;
+  --ink-soft: #121212;
+  --ink-raised: #1a1a1a;
+  --bull: #cc0000;
+  --bull-deep: #8a0000;
+  --gold: #c9a84c;
+  --gold-soft: #e8ce85;
+  --bone: #f5f1e8;
+  --edge: rgba(201, 168, 76, 0.14);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+  color: var(--bone);
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--bull);
+  color: var(--bone);
+}
+
+/* Editorial grain overlay — SVG noise rendered as data URL. */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/></svg>");
+  animation: grain-shift 8s steps(10) infinite;
+}
+
+/* Hairline vertical rule divider used across editorial sections. */
+.rule-v {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--edge) 20%,
+    var(--edge) 80%,
+    transparent 100%
+  );
+}
+
+.rule-h {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--edge) 20%,
+    var(--edge) 80%,
+    transparent 100%
+  );
+}
+
+/* Outline display text effect — used for "ASAS" in the hero. */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--gold);
+}
+
+/* Card tilt on hover utility */
+.card-lift {
+  transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 300ms ease, box-shadow 500ms ease;
+}
+.card-lift:hover {
+  transform: translateY(-8px);
+  border-color: var(--bull);
+  box-shadow: 0 20px 60px -20px rgba(204, 0, 0, 0.45),
+    0 0 0 1px rgba(201, 168, 76, 0.3);
+}
+
+/* Duotone treatment for gallery imagery — filter stack tuned for editorial look. */
+.duotone {
+  filter: grayscale(1) contrast(1.1) brightness(0.85);
+  transition: filter 600ms ease;
+}
+.duotone:hover {
+  filter: grayscale(0.2) contrast(1.15) brightness(1) saturate(1.1);
+}
+
+/* Custom scrollbar so the dark theme doesn't get interrupted */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-raised);
+  border: 2px solid var(--ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bull-deep);
+}
+
+/* Pause infinite marquees on hover */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Prevent anchor offset due to fixed header + ticker */
+section[id] {
+  scroll-margin-top: 88px;
+}

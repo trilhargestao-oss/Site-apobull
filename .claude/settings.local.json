@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx next *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} · %{size_download} bytes · %{time_total}s\\\\n\" http://localhost:3000/)",
+      "Read(//private/tmp/**)",
+      "Bash(npm run *)",
+      "Bash(sips -s format jpeg -s formatOptions 82 --resampleWidth 1600 \"/Users/gheno/Downloads/IMG_4325.HEIC\" --out \"/Users/gheno/Site teste Apobull/public/gallery/primeira-festa.jpg\")",
+      "Bash(sips -r 90 \"/Users/gheno/Site teste Apobull/public/gallery/primeira-festa.jpg\")",
+      "Bash(ffmpeg -y -framerate 24 -i /tmp/bull-frames/f%04d.png -c:v libvpx -pix_fmt yuva420p -b:v 2M -quality good -cpu-used 2 -auto-alt-ref 0 -metadata:s:v:0 alpha_mode=1 -an bull-scroll.webm)",
+      "Bash(ffmpeg -y -ss 4 -i bull-scroll.webm -pix_fmt rgba -frames:v 1 /tmp/v3.png)",
+      "Bash(python3 -c ' *)",
+      "Bash(ffmpeg -y -framerate 24 -i /tmp/bull-frames/f%04d.png -c:v libvpx -pix_fmt yuva420p -auto-alt-ref 0 -crf 15 -b:v 2M -an bull-scroll.webm)",
+      "Bash(lsof -iTCP:3000 -sTCP:LISTEN -t)",
+      "Bash(xargs -r kill -9)",
+      "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\nwebm HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -I -s http://localhost:3000/bull-scroll.webm)",
+      "Bash(ffmpeg -y -i bull-scroll.mp4 -filter_complex '[0:v]split=2[a][b];[a]colorkey=color=white:similarity=0.15:blend=0.1,alphaextract[mask];[b][mask]alphamerge,format=yuva420p[out]' -map '[out]' -c:v libvpx -pix_fmt yuva420p -auto-alt-ref 0 -b:v 2M -crf 20 -metadata:s:v:0 alpha_mode=1 -an bull-scroll.webm)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"home → HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(qlmanage -t -s 600 -o /tmp/ \"/Users/gheno/Downloads/Vídeo_Pronto_Touro_Sem_Fundo-2.mp4\")",
+      "Bash(curl -s -o /dev/null -w \"  video → HTTP %{http_code} · %{size_download} bytes\\\\n\" \"http://localhost:3000/bull-scroll.mp4?v=4\")",
+      "Bash(curl -s -o /dev/null -w '  /players/__TRACKED_VAR__.jpg → HTTP %{http_code}\\\\n' http://localhost:3000/players/__TRACKED_VAR__.jpg)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
