@@ -1,8 +1,6 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { HeroBullVideo } from "./HeroBullVideo";
 import { Particles } from "./Particles";
 import { Ticker } from "./Ticker";
 
@@ -17,29 +15,15 @@ const TICKER_ITEMS = [
 ];
 
 /**
- * Seção Hero. Layout editorial com corner labels, logo animado,
- * tipografia monumental "O TOURO / VESTE ASAS" e CTA âncora.
+ * Seção Hero — altura de viewport única, imagem estática do touro.
+ * Sem sticky scroll / sem vídeo / sem WebGL para performance máxima no mobile.
  */
 export function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // Altura do "trilho" de scroll do hero. Mais alto = animação do touro
-  // mais lenta / mais tempo pinado antes de liberar para a próxima seção.
-  // 250vh dá ~150vh de scroll com o hero travado (sticky), tempo suficiente
-  // para o vídeo do touro rodar de ponta a ponta sem parecer corrido.
   return (
     <section
-      ref={sectionRef}
       id="inicio"
-      className="relative h-[250vh] w-full bg-ink"
+      className="relative min-h-screen w-full bg-ink overflow-hidden flex flex-col"
     >
-      {/*
-        Container sticky — ocupa 100vh e fica pinado no topo da viewport
-        enquanto o usuário rola pelos 250vh da section. Toda a UI do hero
-        (partículas, ticker, logo, headline, CTA, scroll indicator) vive aqui.
-        Quando o pin se solta, a próxima seção (História) aparece.
-      */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col">
       {/* Textura de grama ao fundo (overlay muito escuro) */}
       <div
         aria-hidden
@@ -87,25 +71,39 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Coluna central — logo + headline */}
+          {/* Coluna central — touro + headline */}
           <div className="col-span-12 md:col-span-8 flex flex-col items-center text-center">
-            <HeroBullVideo
-              targetRef={sectionRef}
-              width={220}
-              className="md:hidden"
-            />
-            <HeroBullVideo
-              targetRef={sectionRef}
-              width={320}
-              className="hidden md:block"
-            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85, filter: "blur(12px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative inline-block w-[220px] md:w-[320px]"
+            >
+              {/* Aurora vermelha atrás do touro */}
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 rounded-full blur-3xl opacity-45"
+                style={{
+                  background:
+                    "radial-gradient(circle at 50% 55%, rgba(204,0,0,0.6) 0%, rgba(204,0,0,0) 60%)",
+                }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/bull.png"
+                alt="APOBULL FC — touro alado"
+                width={640}
+                height={800}
+                className="block w-full h-auto drop-shadow-[0_10px_40px_rgba(204,0,0,0.4)] select-none pointer-events-none"
+              />
+            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1.2,
-                delay: 1.1,
+                delay: 0.6,
                 ease: [0.22, 1, 0.36, 1],
               }}
               className="font-display mt-8 md:mt-10 leading-[0.82] tracking-brutal"
@@ -122,7 +120,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
+              transition={{ duration: 0.8, delay: 1 }}
               className="mt-8 flex items-center gap-4 font-mono text-xs tracking-editorial text-bone/80"
             >
               <span className="h-px w-8 bg-gold" />
@@ -137,7 +135,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
               className="mt-12"
             >
               <a href="#historia" className="group relative inline-flex">
@@ -186,7 +184,7 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.2, duration: 1 }}
+        transition={{ delay: 1.6, duration: 1 }}
         className="absolute bottom-8 right-6 md:right-12 z-20 flex flex-col items-center gap-3"
       >
         <span className="font-mono text-[10px] tracking-editorial text-bone/60 [writing-mode:vertical-rl] rotate-180">
@@ -199,7 +197,6 @@ export function Hero() {
 
       {/* Borda inferior dourada hairline */}
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-      </div>
     </section>
   );
 }

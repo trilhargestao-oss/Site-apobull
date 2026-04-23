@@ -24,7 +24,11 @@
       "Bash(curl -s -o /dev/null -w '  /players/__TRACKED_VAR__.jpg → HTTP %{http_code}\\\\n' http://localhost:3000/players/__TRACKED_VAR__.jpg)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(sips -Z 640 \"/Users/gheno/Site teste Apobull/public/bull.png\" --out \"/Users/gheno/Site teste Apobull/public/bull.png\")",
+      "Bash(git commit *)"
     ]
   }
 }

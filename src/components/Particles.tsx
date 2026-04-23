@@ -64,7 +64,10 @@ export function Particles() {
     };
 
     resize();
-    const particles: Particle[] = Array.from({ length: 50 }, makeParticle);
+    // Menos partículas em tela pequena — rAF + canvas2D pesam muito no mobile.
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 18 : 40;
+    const particles: Particle[] = Array.from({ length: count }, makeParticle);
 
     const onResize = () => resize();
     window.addEventListener("resize", onResize);
@@ -88,8 +91,8 @@ export function Particles() {
         const alpha = 0.65 * fade;
         ctx.beginPath();
         ctx.fillStyle = `rgba(${p.color},${alpha})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = `rgba(${p.color},${alpha})`;
+        // shadowBlur é o maior custo aqui — removido. Se quiser "glow",
+        // usar um segundo círculo maior e translúcido é ~10× mais barato.
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
 
