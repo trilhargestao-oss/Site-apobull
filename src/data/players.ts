@@ -74,7 +74,7 @@ export const players: Player[] = [
   {
     id: "s18-05",
     name: "Heitor Beckempamp",
-    nickname: "PRIMO DO JOSÉ",
+    nickname: "HEITOR",
     number: 8,
     position: "ALA",
     category: "SUB 18",
@@ -125,7 +125,7 @@ export const players: Player[] = [
   {
     id: "s18-10",
     name: "Arthur Reolon",
-    nickname: "CHORUME DO GRÊMIO",
+    nickname: "ARTHUR",
     number: 21,
     position: "ALA",
     category: "SUB 18",
