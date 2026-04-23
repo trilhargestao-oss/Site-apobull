@@ -118,7 +118,7 @@ export function Squad() {
         {/* COMISSÃO TÉCNICA — varia por categoria */}
         <CoachingStaff category={active} />
 
-        {/* GRID DE JOGADORES */}
+        {/* GRID DE JOGADORES — carrossel scroll-snap no mobile, grid no desktop */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -126,11 +126,13 @@ export function Squad() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
+            className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 md:mx-0 px-4 md:px-0 pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {filtered.map((p, i) => (
               <PlayerCard key={p.id} player={p} index={i} />
             ))}
+            {/* respiro extra no fim do snap mobile */}
+            <div className="flex-none w-1 md:hidden" aria-hidden />
           </motion.div>
         </AnimatePresence>
 
@@ -165,11 +167,12 @@ export function Squad() {
 /* ---------------------------------- */
 function CoachingStaff({ category }: { category: Category }) {
   const list = coachesByCategory[category];
-  // Grid adaptativo: mantém colunas harmônicas para 3 ou 4 cards.
+  // Grid adaptativo no desktop: mantém colunas harmônicas para 3 ou 4 cards.
+  // No mobile, a linha vira carrossel horizontal com scroll-snap.
   const gridCols =
     list.length === 4
-      ? "grid-cols-2 lg:grid-cols-4"
-      : "grid-cols-1 sm:grid-cols-3";
+      ? "md:grid-cols-2 lg:grid-cols-4"
+      : "md:grid-cols-3";
 
   return (
     <div className="mb-14">
@@ -188,11 +191,12 @@ function CoachingStaff({ category }: { category: Category }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className={`grid ${gridCols} gap-4 md:gap-5`}
+          className={`flex md:grid ${gridCols} gap-4 md:gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none -mx-4 md:mx-0 px-4 md:px-0 pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
         >
           {list.map((c, i) => (
             <CoachCard key={c.id} coach={c} index={i} />
           ))}
+          <div className="flex-none w-1 md:hidden" aria-hidden />
         </motion.div>
       </AnimatePresence>
     </div>
@@ -209,7 +213,7 @@ function CoachCard({ coach: c, index: i }: { coach: Coach; index: number }) {
         delay: i * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative border border-gold/40 bg-ink/70 hover:border-gold transition-colors overflow-hidden flex flex-col"
+      className="group relative border border-gold/40 bg-ink/70 hover:border-gold transition-colors overflow-hidden flex flex-col snap-start flex-none w-[70%] sm:w-[50%] md:w-auto"
     >
       {/* Foto — duotone que ganha cor no hover */}
       <div className="relative aspect-[4/5] overflow-hidden bg-ink-raised">
@@ -293,7 +297,7 @@ function PlayerCard({ player: p, index: i }: { player: Player; index: number }) 
         delay: (i % 3) * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`card-lift relative bg-ink border group cursor-pointer ${
+      className={`card-lift relative bg-ink border group cursor-pointer snap-start flex-none w-[82%] sm:w-[65%] md:w-auto ${
         p.placeholder ? "border-gold/10" : "border-gold/20"
       }`}
     >
