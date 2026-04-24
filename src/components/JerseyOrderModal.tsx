@@ -148,18 +148,18 @@ Aguardo confirmação para efetuar o pagamento! 🤝`;
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[100] flex items-end md:items-center justify-center bg-ink/85 backdrop-blur-sm p-0 md:p-6"
+          className="fixed inset-0 z-[100] flex items-end md:items-center justify-center bg-ink/90 md:bg-ink/85 md:backdrop-blur-sm p-0 md:p-6"
           onClick={onClose}
           aria-modal="true"
           role="dialog"
           aria-labelledby="jersey-order-title"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 30 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full md:max-w-lg bg-ink-soft border border-gold/40 max-h-[92vh] overflow-y-auto shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 40 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full md:max-w-lg bg-ink-soft border border-gold/40 max-h-[90vh] overflow-y-auto md:shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
             onClick={(e) => e.stopPropagation()}
           >
             <div
@@ -168,14 +168,14 @@ Aguardo confirmação para efetuar o pagamento! 🤝`;
             />
 
             {/* Header */}
-            <div className="flex items-center justify-between px-6 md:px-8 pt-8 pb-4 border-b border-gold/15">
+            <div className="flex items-center justify-between px-5 md:px-8 pt-6 md:pt-8 pb-3 md:pb-4 border-b border-gold/15">
               <div>
-                <div className="font-mono text-[10px] tracking-editorial text-gold mb-1.5">
+                <div className="font-mono text-[10px] tracking-editorial text-gold mb-1">
                   § PEDIDO DE CAMISA
                 </div>
                 <h3
                   id="jersey-order-title"
-                  className="font-display text-3xl md:text-4xl leading-none tracking-brutal text-bone"
+                  className="font-display text-2xl md:text-4xl leading-none tracking-brutal text-bone"
                 >
                   VISTA O <span className="text-bull">TOURO</span>.
                 </h3>
@@ -197,7 +197,7 @@ Aguardo confirmação para efetuar o pagamento! 🤝`;
             </div>
 
             {/* Body */}
-            <div className="px-6 md:px-8 py-6 space-y-7">
+            <div className="px-5 md:px-8 py-5 md:py-6 space-y-5 md:space-y-7">
               {/* NOME */}
               <Field
                 label="NOME COMPLETO"
@@ -284,7 +284,7 @@ Aguardo confirmação para efetuar o pagamento! 🤝`;
             </div>
 
             {/* Footer / CTA */}
-            <div className="px-6 md:px-8 pb-8 pt-2">
+            <div className="px-5 md:px-8 pb-6 md:pb-8 pt-2">
               <button
                 type="button"
                 onClick={handleSubmit}
@@ -333,8 +333,8 @@ function JerseyItemBlock({
     total === 1 ? "DETALHES DA CAMISA" : `CAMISA ${index + 1}`;
 
   return (
-    <div className="border border-gold/25 bg-ink/40 p-4 md:p-5">
-      <div className="flex items-center gap-3 mb-4">
+    <div className="border border-gold/25 bg-ink/40 p-3.5 md:p-5">
+      <div className="flex items-center gap-3 mb-3 md:mb-4">
         <span className="font-display text-lg text-gold leading-none">
           {total === 1 ? "§" : `0${index + 1}`}
         </span>
@@ -362,7 +362,7 @@ function JerseyItemBlock({
                 key={s}
                 type="button"
                 onClick={() => onChange({ size: s })}
-                className={`relative h-12 font-display text-xl tracking-wide transition-all ${
+                className={`relative h-11 md:h-12 font-display text-lg md:text-xl tracking-wide transition-all ${
                   isActive
                     ? "bg-bull text-bone border border-gold"
                     : "bg-ink border border-gold/20 text-bone/70 hover:border-gold/50 hover:text-bone"
