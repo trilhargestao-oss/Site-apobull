@@ -13,6 +13,28 @@ export interface NewsItem {
 // Ao adicionar uma nova, insira no começo desta lista (posição 0).
 export const news: NewsItem[] = [
   {
+    id: "n10",
+    date: "ABRIL 2026",
+    category: "MERCADO",
+    title: "BEM VINDO ARTHUR!",
+    excerpt:
+      "Chorume do Grêmio larga as lives e assina com o Apobull! O craque cansou de passar raiva sendo streamer e agora virou craque nas quadras, seja bem vindo!",
+    tag: "SUB 18 • ALA",
+    cover: "/news/arthur-bemvindo.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n09",
+    date: "ABRIL 2026",
+    category: "MERCADO",
+    title: "BEM VINDO MARQUINHOS!",
+    excerpt:
+      "Diretamente do PSG, o mestre Marquinhos assina com o Apobull. Após anos na Europa, ele decide vir jogar para o maior do Brasil. Seja bem vindo ao Touro, craque!",
+    tag: "SUB 18 • FIXO",
+    cover: "/news/marquinhos-bemvindo.png",
+    coverFit: "cover",
+  },
+  {
     id: "n08",
     date: "ABRIL 2026",
     category: "MERCADO",

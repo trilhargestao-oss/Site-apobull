@@ -60,7 +60,6 @@ export const players: Player[] = [
     since: 2026,
     photo: "/players/marquinhos.jpg",
     focal: "45% 25%",
-    hidden: true,
   },
   // Alas
   {
@@ -141,7 +140,6 @@ export const players: Player[] = [
     since: 2026,
     photo: "/players/chorume.jpg",
     focal: "center 30%",
-    hidden: true,
   },
   // Pivô
   {
