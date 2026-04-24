@@ -70,22 +70,37 @@ export function Sponsors() {
               identidade em quadra, na torcida e nas redes.
             </p>
           </div>
-          <a
-            href="mailto:apobullfc@gmail.com?subject=Patrocínio"
-            className="group relative inline-flex shrink-0"
-          >
-            <span className="absolute inset-0 bg-gold translate-x-1.5 translate-y-1.5 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
-            <span className="relative inline-flex items-center gap-4 bg-ink border border-gold px-8 py-4 font-mono text-xs tracking-editorial text-gold group-hover:text-ink group-hover:bg-gold transition-colors">
-              <span>SEJA UM PATROCINADOR</span>
-              <svg width="28" height="10" viewBox="0 0 28 10" fill="none">
-                <path
-                  d="M0 5 L26 5 M22 1 L26 5 L22 9"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                />
-              </svg>
-            </span>
-          </a>
+          <div className="flex flex-col items-center md:items-end gap-3 shrink-0">
+            <a
+              href={`https://wa.me/5549984141102?text=${encodeURIComponent(
+                "Olá! Tenho interesse em ser patrocinador do APOBULL FC."
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex"
+            >
+              <span className="absolute inset-0 bg-gold translate-x-1.5 translate-y-1.5 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
+              <span className="relative inline-flex items-center gap-4 bg-ink border border-gold px-8 py-4 font-mono text-xs tracking-editorial text-gold group-hover:text-ink group-hover:bg-gold transition-colors">
+                <span>SEJA UM PATROCINADOR</span>
+                <svg width="28" height="10" viewBox="0 0 28 10" fill="none">
+                  <path
+                    d="M0 5 L26 5 M22 1 L26 5 L22 9"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                  />
+                </svg>
+              </span>
+            </a>
+            <a
+              href="https://wa.me/5549984141102"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] tracking-editorial text-bone/50 hover:text-gold transition-colors flex items-center gap-2"
+            >
+              <span className="text-gold">◆</span>
+              WHATSAPP (49) 98414-1102
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
