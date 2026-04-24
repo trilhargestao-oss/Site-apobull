@@ -13,8 +13,12 @@ import { SectionLabel } from "./SectionLabel";
 export function Squad() {
   const [active, setActive] = useState<Category>("SUB 18");
 
+  // Categorias que ainda não foram reveladas publicamente: aba fica travada
+  // com selo "EM BREVE". Liberar aqui assim que o elenco for anunciado.
+  const LOCKED: Category[] = ["LIVRE"];
+
   const filtered = useMemo(
-    () => players.filter((p) => p.category === active),
+    () => players.filter((p) => p.category === active && !p.hidden),
     [active]
   );
 
@@ -83,20 +87,32 @@ export function Squad() {
         >
           {CATEGORIES.map((cat) => {
             const isActive = active === cat;
+            const isLocked = LOCKED.includes(cat);
             return (
               <button
                 key={cat}
                 role="tab"
                 aria-selected={isActive}
-                onClick={() => setActive(cat)}
+                aria-disabled={isLocked}
+                disabled={isLocked}
+                onClick={() => !isLocked && setActive(cat)}
                 className={`relative font-mono text-xs tracking-editorial px-7 py-3.5 transition-colors duration-300 ${
-                  isActive
+                  isLocked
+                    ? "bg-transparent text-bone/30 border border-gold/15 cursor-not-allowed"
+                    : isActive
                     ? "bg-bull text-bone border border-bull"
                     : "bg-transparent text-gold border border-gold hover:bg-gold/10"
                 }`}
               >
-                <span className="relative z-10">{cat}</span>
-                {isActive && (
+                <span className="relative z-10 flex items-center gap-2.5">
+                  {cat}
+                  {isLocked && (
+                    <span className="font-mono text-[9px] tracking-editorial text-gold/60 border border-gold/30 px-1.5 py-0.5">
+                      EM BREVE
+                    </span>
+                  )}
+                </span>
+                {isActive && !isLocked && (
                   <motion.span
                     layoutId="tab-underline"
                     className="absolute -bottom-px left-0 right-0 h-px bg-bone"
