@@ -1,20 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-
-// Mensagem pré-preenchida ao clicar em "COMPRAR CAMISA".
-// URL-encoded para caber no link do WhatsApp.
-const WHATSAPP_NUMBER = "5549984141102";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá! Vim pelo site do APOBULL FC e quero comprar a camisa oficial 2026."
-);
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+import { JerseyOrderModal } from "./JerseyOrderModal";
 
 /**
  * Banner promocional da camisa oficial. Foto chapada em fullscreen editorial,
  * headline monumental + CTA para WhatsApp (ação direta de compra).
  */
 export function JerseyBanner() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section
       id="camisa"
@@ -93,10 +89,9 @@ export function JerseyBanner() {
 
           {/* CTA principal — WhatsApp */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => setModalOpen(true)}
               className="group relative inline-flex"
             >
               <span className="absolute inset-0 bg-gold translate-x-1.5 translate-y-1.5 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
@@ -117,7 +112,7 @@ export function JerseyBanner() {
                   />
                 </svg>
               </span>
-            </a>
+            </button>
 
             <span className="font-mono text-[10px] tracking-editorial text-bone/50">
               ATENDIMENTO DIRETO · (49) 98414-1102
@@ -131,6 +126,9 @@ export function JerseyBanner() {
         aria-hidden
         className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"
       />
+
+      {/* Modal de pedido — abre ao clicar em "COMPRAR CAMISA" */}
+      <JerseyOrderModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }
