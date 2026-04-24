@@ -209,7 +209,7 @@ Aguardo confirmação para efetuar o pagamento! 🤝`;
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Seu nome aqui"
-                  className={inputClass(errors.name)}
+                  className={inputClass(!!errors.name)}
                 />
               </Field>
 
