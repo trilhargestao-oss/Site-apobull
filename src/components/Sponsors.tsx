@@ -96,34 +96,31 @@ function SponsorCard({
   sponsor,
   variant = "solid",
 }: {
-  sponsor: { name: string; kind: string };
+  sponsor: { name: string; kind: string; logo?: string };
   variant?: "solid" | "outline";
 }) {
   return (
     <div
-      className={`mx-4 flex items-center gap-5 min-w-[280px] h-24 px-8 ${
-        variant === "solid"
-          ? "border border-gold/25 bg-ink-soft"
-          : "border border-bull/30 bg-ink"
-      }`}
+      className="mx-3 flex items-center justify-center min-w-[200px] md:min-w-[240px] h-28 px-6"
+      title={`${sponsor.name} — PARCEIRO ${sponsor.kind}`}
     >
-      {/* glyph placeholder — um losango + traço */}
-      <div className="flex items-center gap-2">
-        <div
-          className={`h-5 w-5 rotate-45 ${
-            variant === "solid" ? "bg-gold" : "bg-bull"
+      {sponsor.logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={sponsor.logo}
+          alt={sponsor.name}
+          loading="lazy"
+          draggable={false}
+          style={{ mixBlendMode: "lighten" }}
+          className={`max-h-24 w-auto max-w-[220px] object-contain select-none transition-opacity duration-300 ${
+            variant === "solid" ? "opacity-90 hover:opacity-100" : "opacity-70 hover:opacity-100"
           }`}
         />
-        <div className="h-px w-6 bg-bone/30" />
-      </div>
-      <div>
+      ) : (
         <div className="font-display text-2xl leading-none text-bone tracking-wide">
           {sponsor.name}
         </div>
-        <div className="font-mono text-[9px] tracking-editorial text-bone/50 mt-1">
-          PARCEIRO {sponsor.kind}
-        </div>
-      </div>
+      )}
     </div>
   );
 }

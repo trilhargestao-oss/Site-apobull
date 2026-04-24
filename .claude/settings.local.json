@@ -37,7 +37,17 @@
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/gheno/Downloads/asjdfgvsudib.png\")",
       "Bash(sips -s format jpeg -s formatOptions 82 \"/Users/gheno/Downloads/dskjghwrvuib.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026-desktop.jpg\")",
       "Bash(sips -s format jpeg -s formatOptions 82 \"/Users/gheno/Downloads/asjdfgvsudib.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026-mobile.jpg\")",
-      "Bash(sips *)"
+      "Bash(sips *)",
+      "Bash(unzip -l \"/Users/gheno/Downloads/SOLLOS..zip\")",
+      "Bash(mkdir -p /tmp/sponsors-extract)",
+      "Bash(unzip -o \"/Users/gheno/Downloads/SOLLOS..zip\" -d /tmp/sponsors-extract)",
+      "Bash(cp /tmp/sponsors-extract/16.png incobel.png)",
+      "Bash(cp /tmp/sponsors-extract/17.png inviolavel.png)",
+      "Bash(cp /tmp/sponsors-extract/18.png nego-alba.png)",
+      "Bash(cp /tmp/sponsors-extract/19.png miola.png)",
+      "Bash(cp /tmp/sponsors-extract/20.png sicoob.png)",
+      "Bash(python3 *)",
+      "Bash(awk '{print $9}')"
     ]
   }
 }
