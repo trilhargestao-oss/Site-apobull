@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 // Display: Bebas Neue para títulos monumentais
@@ -63,6 +64,7 @@ export default function RootLayout({
     >
       <body className="grain bg-ink text-bone font-body antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
