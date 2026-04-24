@@ -36,7 +36,8 @@
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/gheno/Downloads/dskjghwrvuib.png\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/gheno/Downloads/asjdfgvsudib.png\")",
       "Bash(sips -s format jpeg -s formatOptions 82 \"/Users/gheno/Downloads/dskjghwrvuib.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026-desktop.jpg\")",
-      "Bash(sips -s format jpeg -s formatOptions 82 \"/Users/gheno/Downloads/asjdfgvsudib.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026-mobile.jpg\")"
+      "Bash(sips -s format jpeg -s formatOptions 82 \"/Users/gheno/Downloads/asjdfgvsudib.png\" --out \"/Users/gheno/Site teste Apobull/public/camisa-2026-mobile.jpg\")",
+      "Bash(sips *)"
     ]
   }
 }

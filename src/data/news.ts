@@ -13,6 +13,39 @@ export interface NewsItem {
 // Ao adicionar uma nova, insira no começo desta lista (posição 0).
 export const news: NewsItem[] = [
   {
+    id: "n08",
+    date: "ABRIL 2026",
+    category: "MERCADO",
+    title: "CAUEZÃO RENOVADO",
+    excerpt:
+      "Cauê renova com o Apobull após um ano de muitas alegrias com a artilharia do campeonato! Dessa vez pela comissão, o craque reforça: 'se o time não marcar eu invado a quadra pra ajudar'.",
+    tag: "COMISSÃO TÉCNICA",
+    cover: "/news/caue-renovado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n07",
+    date: "ABRIL 2026",
+    category: "MERCADO",
+    title: "GHENO RENOVADO",
+    excerpt:
+      "Nosso antigo jogador renova com o Apobull mais um ano! O craque já decidiu final de campeonato e vem pelo segundo ano na comissão técnica da equipe.",
+    tag: "COMISSÃO TÉCNICA",
+    cover: "/news/gheno-renovado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n06",
+    date: "ABRIL 2026",
+    category: "MERCADO",
+    title: "GUIZÃO RENOVADO",
+    excerpt:
+      "Nosso mister e ex-jogador renova mais uma temporada com o Apobull! 'Passei 8 horas por dia durante 3 meses estudando táticas e estratégias para o Apobull' diz o craque após reprovar no detector de mentiras.",
+    tag: "COMISSÃO TÉCNICA",
+    cover: "/news/gui-renovado.png",
+    coverFit: "cover",
+  },
+  {
     id: "n05",
     date: "ABRIL 2026",
     category: "MERCADO",
