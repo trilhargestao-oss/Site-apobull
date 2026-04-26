@@ -13,6 +13,17 @@ export interface NewsItem {
 // Ao adicionar uma nova, insira no começo desta lista (posição 0).
 export const news: NewsItem[] = [
   {
+    id: "n11",
+    date: "ABRIL 2026",
+    category: "LANÇAMENTO",
+    title: "NOVO MANTO 2026",
+    excerpt:
+      "Apresentamos a nova camisa oficial do Apobull para a temporada 2026. O manto que veste o Touro nesta nova era — disponível para encomenda pelo WhatsApp.",
+    tag: "UNIFORME OFICIAL",
+    cover: "/news/novo-manto-2026.png",
+    coverFit: "cover",
+  },
+  {
     id: "n10",
     date: "ABRIL 2026",
     category: "MERCADO",
