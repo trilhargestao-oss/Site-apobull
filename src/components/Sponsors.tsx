@@ -116,7 +116,7 @@ function SponsorCard({
 }) {
   return (
     <div
-      className="mx-3 flex items-center justify-center min-w-[200px] md:min-w-[240px] h-28 px-6"
+      className="mx-4 flex items-center justify-center min-w-[260px] md:min-w-[320px] h-40 md:h-44 px-6"
       title={`${sponsor.name} — PARCEIRO ${sponsor.kind}`}
     >
       {sponsor.logo ? (
@@ -127,7 +127,7 @@ function SponsorCard({
           loading="lazy"
           draggable={false}
           style={{ mixBlendMode: "lighten" }}
-          className={`max-h-24 w-auto max-w-[220px] object-contain select-none transition-opacity duration-300 ${
+          className={`max-h-36 md:max-h-40 w-auto max-w-[300px] object-contain select-none transition-opacity duration-300 ${
             variant === "solid" ? "opacity-90 hover:opacity-100" : "opacity-70 hover:opacity-100"
           }`}
         />
