@@ -34,7 +34,6 @@ export const players: Player[] = [
     since: 2023,
     photo: "/players/noronha-sub18.jpg",
     focal: "42% 30%",
-    hidden: true,
   },
   {
     id: "s18-02",
@@ -73,7 +72,6 @@ export const players: Player[] = [
     since: 2026,
     photo: "/players/theo.jpg",
     focal: "center 25%",
-    hidden: true,
   },
   {
     id: "s18-05",
@@ -83,7 +81,6 @@ export const players: Player[] = [
     position: "ALA",
     category: "SUB 18",
     since: 2026,
-    hidden: true,
   },
   {
     id: "s18-06",
@@ -117,7 +114,6 @@ export const players: Player[] = [
     position: "ALA",
     category: "SUB 18",
     since: 2026,
-    hidden: true,
   },
   {
     id: "s18-09",
@@ -127,7 +123,6 @@ export const players: Player[] = [
     position: "ALA",
     category: "SUB 18",
     since: 2026,
-    hidden: true,
   },
   {
     id: "s18-10",

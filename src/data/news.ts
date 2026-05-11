@@ -13,6 +13,39 @@ export interface NewsItem {
 // Ao adicionar uma nova, insira no começo desta lista (posição 0).
 export const news: NewsItem[] = [
   {
+    id: "n14",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "BEM VINDO HEITOR!",
+    excerpt:
+      "Heitor chega ao Apobull para reforçar as alas do Sub 18! Velocidade, raça e fome de bola — o Touro ganha mais um craque para a temporada. Seja bem vindo, guerreiro!",
+    tag: "SUB 18 • ALA",
+    cover: "/news/heitor-bemvindo.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n13",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "BEM VINDO EVERTON!",
+    excerpt:
+      "Everton assina com o Apobull e reforça o ataque do Sub 18! Mais um nome de peso para escrever a história do Touro em 2026. Seja bem vindo, craque!",
+    tag: "SUB 18 • ALA",
+    cover: "/news/everton-bemvindo.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n12",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "BEM VINDO OSMAR!",
+    excerpt:
+      "Osmar é o novo reforço do Apobull no Sub 18! Mais uma ala potente para a temporada — o Touro segue se armando para 2026. Seja bem vindo!",
+    tag: "SUB 18 • ALA",
+    cover: "/news/osmar-bemvindo.png",
+    coverFit: "cover",
+  },
+  {
     id: "n11",
     date: "ABRIL 2026",
     category: "LANÇAMENTO",
