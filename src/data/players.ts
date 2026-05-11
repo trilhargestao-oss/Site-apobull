@@ -169,6 +169,7 @@ export const players: Player[] = [
     since: 2026,
     photo: "/players/maico.jpg",
     focal: "center 28%",
+    hidden: true,
   },
   {
     id: "liv-02",
@@ -194,6 +195,7 @@ export const players: Player[] = [
     since: 2026,
     photo: "/players/adolfo.jpg",
     focal: "center 30%",
+    hidden: true,
   },
   {
     id: "liv-04",
@@ -219,6 +221,7 @@ export const players: Player[] = [
     since: 2026,
     photo: "/players/rafa-mello.jpg",
     focal: "center 40%",
+    hidden: true,
   },
   {
     id: "liv-06",

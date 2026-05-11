@@ -15,7 +15,7 @@ export function Squad() {
 
   // Categorias que ainda não foram reveladas publicamente: aba fica travada
   // com selo "EM BREVE". Liberar aqui assim que o elenco for anunciado.
-  const LOCKED: Category[] = ["LIVRE"];
+  const LOCKED: Category[] = [];
 
   const filtered = useMemo(
     () => players.filter((p) => p.category === active && !p.hidden),
