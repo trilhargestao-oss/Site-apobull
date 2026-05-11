@@ -13,6 +13,83 @@ export interface NewsItem {
 // Ao adicionar uma nova, insira no começo desta lista (posição 0).
 export const news: NewsItem[] = [
   {
+    id: "n21",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "GUILHERME CONTRATADO",
+    excerpt:
+      "Guilherme assina contrato para 2026 com o Apobull! Nosso fixo segue raçudo na zaga e pronto pra mais uma temporada de glórias com o Touro.",
+    tag: "LIVRE • FIXO",
+    cover: "/news/guilherme-contratado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n20",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "NORONHA CONTRATADO",
+    excerpt:
+      "Noronha segue defendendo o gol do Apobull em 2026! Nosso paredão renova contrato e segue como dono da meta do Touro.",
+    tag: "LIVRE • GOLEIRO",
+    cover: "/news/noronha-contratado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n19",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "PARAGUAI CONTRATADO",
+    excerpt:
+      "O hermano fica! Paraguai assina contrato com o Apobull para 2026. Velocidade, drible e gol — segue de Touro no peito.",
+    tag: "LIVRE • ALA",
+    cover: "/news/paraguai-contratado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n18",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "ZIMMER CONTRATADO",
+    excerpt:
+      "Zimmer renova com o Apobull em 2026! O canhão da ala esquerda segue à disposição do Touro para mais uma temporada.",
+    tag: "LIVRE • ALA",
+    cover: "/news/zimmer-contratado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n17",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "TCHANANAM CONTRATADO",
+    excerpt:
+      "Tchananam contratado para mais uma temporada! Nosso veterano de guerra segue brigando pela camisa do Apobull em 2026.",
+    tag: "LIVRE • ALA",
+    cover: "/news/tchananam-contratado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n16",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "MIGUEL CONTRATADO",
+    excerpt:
+      "Miguel assina contrato com o Apobull para 2026! Mais uma temporada de velocidade e raça pela faixa direita do Touro.",
+    tag: "LIVRE • ALA",
+    cover: "/news/miguel-contratado.png",
+    coverFit: "cover",
+  },
+  {
+    id: "n15",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "VALGOI CONTRATADO",
+    excerpt:
+      "Valgoi contratado para 2026! Nosso pivô segue raçudo na pintura, escolhido a dedo para liderar o ataque do Touro mais uma temporada.",
+    tag: "LIVRE • PIVÔ",
+    cover: "/news/valgoi-contratado.png",
+    coverFit: "cover",
+  },
+  {
     id: "n14",
     date: "MAIO 2026",
     category: "MERCADO",
@@ -98,17 +175,6 @@ export const news: NewsItem[] = [
       "Nosso antigo jogador renova com o Apobull mais um ano! O craque já decidiu final de campeonato e vem pelo segundo ano na comissão técnica da equipe.",
     tag: "COMISSÃO TÉCNICA",
     cover: "/news/gheno-renovado.png",
-    coverFit: "cover",
-  },
-  {
-    id: "n06",
-    date: "ABRIL 2026",
-    category: "MERCADO",
-    title: "GUIZÃO RENOVADO",
-    excerpt:
-      "Nosso mister e ex-jogador renova mais uma temporada com o Apobull! 'Passei 8 horas por dia durante 3 meses estudando táticas e estratégias para o Apobull' diz o craque após reprovar no detector de mentiras.",
-    tag: "COMISSÃO TÉCNICA",
-    cover: "/news/gui-renovado.png",
     coverFit: "cover",
   },
   {

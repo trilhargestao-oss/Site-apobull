@@ -81,6 +81,8 @@ export const players: Player[] = [
     position: "ALA",
     category: "SUB 18",
     since: 2026,
+    photo: "/players/heitor.jpg",
+    focal: "center 20%",
   },
   {
     id: "s18-06",
@@ -114,6 +116,8 @@ export const players: Player[] = [
     position: "ALA",
     category: "SUB 18",
     since: 2026,
+    photo: "/players/everton.png",
+    focal: "40% 25%",
   },
   {
     id: "s18-09",
@@ -123,6 +127,8 @@ export const players: Player[] = [
     position: "ALA",
     category: "SUB 18",
     since: 2026,
+    photo: "/players/osmar.jpg",
+    focal: "center 30%",
   },
   {
     id: "s18-10",
