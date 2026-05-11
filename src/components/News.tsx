@@ -181,10 +181,6 @@ export function News() {
                 {item.title}
               </h3>
 
-              <p className="text-xs text-bone/65 leading-relaxed line-clamp-3">
-                {item.excerpt}
-              </p>
-
               <div className="mt-4 flex items-center justify-between pt-3 border-t border-gold/10">
                 <span className="font-mono text-[9px] tracking-editorial text-bone/40">
                   APOBULL / {String(i + 1).padStart(2, "0")}
