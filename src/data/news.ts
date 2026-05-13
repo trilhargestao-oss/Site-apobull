@@ -13,6 +13,17 @@ export interface NewsItem {
 // Ao adicionar uma nova, insira no começo desta lista (posição 0).
 export const news: NewsItem[] = [
   {
+    id: "n22",
+    date: "MAIO 2026",
+    category: "MERCADO",
+    title: "MAICO CONTRATADO",
+    excerpt:
+      "Maico assina contrato com o Apobull para 2026! Mais um paredão pra defender o gol do Touro na temporada. Vamo, mestre!",
+    tag: "LIVRE • GOLEIRO",
+    cover: "/news/maico-contratado.png",
+    coverFit: "cover",
+  },
+  {
     id: "n21",
     date: "MAIO 2026",
     category: "MERCADO",

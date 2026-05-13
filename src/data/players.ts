@@ -169,7 +169,6 @@ export const players: Player[] = [
     since: 2026,
     photo: "/players/maico.jpg",
     focal: "center 28%",
-    hidden: true,
   },
   {
     id: "liv-02",
